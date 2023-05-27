@@ -5,8 +5,17 @@
 #### array is empty or contains only negative integers, the function should return 0.
 ######################################################################################
 
-def getMaxSum(list):
-    pass
+def getMaxSum(arr):
+    max_sum = 0
+    current_sum = 0
+    for num in arr:
+        current_sum += num
+        if current_sum < 0:
+            current_sum = 0
+        if current_sum > max_sum:
+            max_sum = current_sum
+    return max_sum
+
 
 
 
@@ -19,5 +28,9 @@ def getMaxSum(list):
 #### only whitespaces, the function should return an empty string.
 ######################################################################################
 
-def uniqueChars(str):
-    pass
+def uniqueChars(s):
+    unique_chars = []
+    for char in s:
+        if char not in unique_chars and char != ' ':
+            unique_chars.append(char)
+    return ''.join(unique_chars)
